@@ -57,7 +57,7 @@ public class QArrayList<E> {
             System.arraycopy(elementData, index + 1, elementData, index, numMoved);
         }
 
-        // 最后一个元素置为 null， GC 工作是清理对应对对象
+        // 最后一个元素置为 null， GC 工作时清理对应对对象
         elementData[--size] = null;
 
         return oldValue;
@@ -83,6 +83,9 @@ public class QArrayList<E> {
             qa.remove(0);
         }
         System.out.println(qa.size);
+
+        QArrayList.class.getClassLoader();
+
     }
 
 }

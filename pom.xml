@@ -17,6 +17,7 @@
 
     <modules>
         <module>projects-jdk</module>
+        <module>projects-jvm</module>
     </modules>
 
 </project>
