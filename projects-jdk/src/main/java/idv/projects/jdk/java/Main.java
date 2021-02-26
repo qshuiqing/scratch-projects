@@ -7,10 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Object o = new Object();
+//        DO[] o = {new DO(), new DO()};
 
-        System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        int[] i = {1,2,3};
 
+//        System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        System.out.println(ClassLayout.parseInstance(i).toPrintable());
     }
 
 }
