@@ -72,4 +72,31 @@ public class QLinkedList<E> {
         size++;
     }
 
+    public E remove(int index) { // 指定下标删除
+
+        Node<E> x = node(index);
+
+        final E element = x.item;
+        final Node<E> next = x.next;
+        final Node<E> prev = x.prev;
+
+        if (prev == null) { // 删除的是首结点
+            first = next;
+        } else {
+            prev.next = next;
+            x.prev = null;
+        }
+
+        if (next == null) { // 删除的是尾结点
+            last = prev;
+        } else {
+            next.prev = prev;
+            x.next = null;
+        }
+
+        x.item = null; // 利于 GC
+        size--;
+        return element;
+    }
+
 }
