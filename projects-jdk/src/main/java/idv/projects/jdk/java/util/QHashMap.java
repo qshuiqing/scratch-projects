@@ -170,6 +170,8 @@ public class QHashMap<K, V> {
                 oldTab[j] = null;
                 if (e.next == null) { // 桶中只有一个元素直接 rehash 即可
                     table[e.hash & (newCap - 1)] = e;
+                } else if (e instanceof TreeNode) { // rehash 红黑树
+                    ((TreeNode<K, V>) e).split(this, table, j, oldCap);
                 } else {
                     // 桶中有多个元素，遍历 rehash
                     // rehash 后，元素只有两种可能：1-映射到 j 内；2-映射到 j + oldCap 内
@@ -272,6 +274,10 @@ public class QHashMap<K, V> {
         }
 
         final void removeTreeNode(QHashMap<K, V> map, Node<K, V>[] tab) {
+            //TODO
+        }
+
+        final void split(QHashMap<K, V> map, Node<K, V>[] tab, int index, int bit) {
             //TODO
         }
 
