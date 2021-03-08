@@ -19,6 +19,16 @@
         <module>projects-jdk</module>
         <module>projects-jvm</module>
         <module>projects-leetcode</module>
+        <module>projects-spring</module>
+        <module>projects-interview</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.18</version>
+        </dependency>
+    </dependencies>
 
 </project>
